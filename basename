@@ -1,0 +1,4 @@
+#!/bin/bash
+RETVAL="${1##*/}"
+[[ -n "$2" ]] && RETVAL="${RETVAL%"$2"}"
+echo "$RETVAL"
