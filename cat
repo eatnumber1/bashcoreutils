@@ -1,0 +1,8 @@
+#!/bin/bash
+IFS=$'\n'
+for i in "$@"; do
+	[[ -n "$i" && "$i" != "-" ]] && exec 3< "$i" || exec 3<&0
+	while read -ru 3 line; do
+		echo -E "$line"
+	done
+done
