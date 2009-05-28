@@ -1,0 +1,4 @@
+#!/bin/bash
+RETVAL="${1%/*}"
+[[ "$RETVAL" == "$1" ]] && RETVAL="."
+echo "$RETVAL"
