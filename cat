@@ -12,3 +12,4 @@ for i in "${INPUTS[@]}"; do
 		echo -E "$line"
 	done
 done
+exec 3>&-
