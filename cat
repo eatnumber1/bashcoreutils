@@ -37,6 +37,7 @@ while getopts "hAbeEnstTv" flag; do
 		h)    usage 1;;
 		b|n)  declare -i number=0
 		      [[ "$flag" == "b" ]] && number_nonblank="true";;
+		E)    eol_char="$";;
 		A|e|E|n|s|t|T|v) unsupported $flag;;
 		\?)   usage;;
 		*)    usage;;
@@ -60,7 +61,7 @@ for i in "${INPUTS[@]}"; do
 				number+=1
 			fi
 		fi
-		echo -E "$line"
+		echo -E "$line$eol_char"
 	done
 done
 exec 3>&-
