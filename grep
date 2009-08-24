@@ -11,6 +11,6 @@ for i in "${INPUT[@]}"; do
 	fi
 
 	while read -ru 3 line; do
-		[[ "$line" == *$PATTERN* ]] && echo -E "$line"
+		[[ "$line" =~ .*$PATTERN.* ]] && echo -E "$line"
 	done
 done
